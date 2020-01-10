@@ -1,0 +1,89 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+ol li {
+    list-style: none;
+}
+
+.el-carousel__indicators--horizontal {
+    left: 60%;
+    bottom: -2%;
+}
+
+.el-carousel__button {
+    height: 5px;
+    border-radius: 3px;
+}
+
+.el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
+    background-color: #3764A9;
+    color: #fff;
+}
+
+.el-tabs__nav.is-top {
+    height: 62px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #7494C3;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.el-tabs__item.is-top {
+    height: 100%;
+    width: 50%;
+}
+
+.el-tabs__header.is-top {
+    height: 62px;
+    background-color: #fff;
+}
+
+.el-tabs__nav-wrap.is-scrollable.is-top {
+    margin: 0;
+    padding: 0;
+}
+
+.el-tabs__item.is-top.is-active {
+    margin: 0;
+}
+
+.el-tabs--border-card>.el-tabs__header .el-tabs__item+.el-tabs__item,
+.el-tabs--border-card>.el-tabs__header .el-tabs__item:first-child {
+    margin-left: 0.3px;
+}
+
+.el-tabs__item {
+    line-height: 61px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.el-tabs--border-card>.el-tabs__header {
+    border: 0;
+}
+
+.el-tabs--border-card {
+    border: 0;
+    box-shadow: 0;
+}
+
+.el-tabs--border-card>.el-tabs__content {
+    padding: 0;
+}
+
+.el-carousel--horizontal {
+    overflow: hidden;
+}
+
+.el-input__inner {
+    height: 23px;
+}
