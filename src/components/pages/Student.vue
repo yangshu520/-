@@ -28,13 +28,12 @@
                 img:require('../../assets/images/student.png'),
                 active:0,
                 scData:[
-                    {title:'思想建设',path:'/parygroup/thought'},
-                    {title:'组织建设',path:'/parygroup/organization'},
-                    {title:'作风建设',path:'/parygroup/way'},
-                    {title:'廉政建设',path:'/parygroup/integrity'},
-                    {title:'党建动态',path:'/parygroup/bulid'},
-                    {title:'工 会',path:'/parygroup/union'},
-                    {title:'团 委',path:'/parygroup/group'},
+                    {title:'团委学生会',path:''},
+                    {title:'学生社团',path:''},
+                    {title:'学生佳作',path:''},
+                    {title:'校运会风采',path:''},
+                    {title:'班级主页',path:''},
+                    {title:'军训专栏',path:''},
                 ]
             }
         },

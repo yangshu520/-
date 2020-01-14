@@ -57,8 +57,8 @@
       getActive(item,i){
         this.$router.push(item)
         this.active=i
-      }
-    }
+      },
+    },
   }
 </script>
 

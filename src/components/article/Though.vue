@@ -1,7 +1,7 @@
 <template>
     <div>
        <div class="header-nav" separator-class="el-icon-arrow-right">
-           <span class="left">组织建设</span>
+           <span class="left">思想建设</span>
            <div class="right">
                <span>当前位置：</span>
                <el-breadcrumb separator-class="el-icon-arrow-right">

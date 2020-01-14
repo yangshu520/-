@@ -1,13 +1,13 @@
 <template>
     <div>
        <div class="header-nav" separator-class="el-icon-arrow-right">
-           <span class="left">组织建设</span>
+           <span class="left">党建动态</span>
            <div class="right">
                <span>当前位置：</span>
                <el-breadcrumb separator-class="el-icon-arrow-right">
                     <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/parygroup/organization' }">党群建设</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/parygroup/organization' }">组织建设</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/parygroup/bulid' }">党群建设</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/parygroup/bulid' }">党建动态</el-breadcrumb-item>
                 </el-breadcrumb>
            </div>
        </div>

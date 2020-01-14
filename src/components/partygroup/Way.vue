@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="thuoght" v-for="(item,index) in listData" :key="index">
+        <div class="thuoght" v-for="(item,index) in listData" :key="index" @click="$router.push('/parygroup/ways/'+item.articleId)">
             <div class="left">
                 <span>{{item.articleTitle}}</span>
             </div>
@@ -25,7 +25,7 @@
                     // 当前的页数
                     pageNum:1,
                     // 后端需要的id
-                    categoryId:33
+                    categoryId:56
                 },
                 listData:[],
                 total:0

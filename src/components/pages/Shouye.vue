@@ -97,12 +97,12 @@
                         <div style="width:100%;height:264px;border-radius: 20px;overflow: hidden;">
                             <div class="jianshe">党群建设</div>
                             <div class="xuanxiangbox">
-                                <div class="xuanxiang" v-for="(item,index) in xuanxiang" :key="index" @click="$router.push('/parygroup/organization/'+item.articleId)">
+                                <div class="xuanxiang" v-for="(item,index) in xuanxiang" :key="index" @click="$router.push('/parygroup/thoght/'+item.articleId)">
                                     <span class="shenglie">{{item.articleTitle}}</span>
                                     <span style="float:right;color:#999">{{item.articleCreateTime.substr(0,10)}}</span>
                                 </div>
                             </div>
-                            <div class="moreuexiang" v-if="xuanxiang.length!==0" @click="$router.push('/parygroup/thought')"><span>查看更多>></span></div>
+                            <div class="moreuexiang" v-if="xuanxiang.length!==0" @click="jianshe"><span>查看更多>></span></div>
                         </div>
                         <div style="width:100%;hegiht:230px;border-radius: 10px;overflow: hidden;margin-top:43px">
                             <div class="jianshe">教育科研</div>
@@ -164,6 +164,7 @@
                 ],
                 xuanxiang:[],
                 keyanDate:[],
+                active:0
             }
         },
         mounted(){
@@ -178,13 +179,18 @@
                 this.xyDate=xyDate.data.rows
                 const {data:szDate}=await this.$http.get('/article/list',{params:{categoryId:51}});
                 this.szDate=szDate.data.rows
-                const {data:xuanxiang}=await this.$http.get('/article/list',{params:{categoryId:33}});
+                const {data:xuanxiang}=await this.$http.get('/article/list',{params:{categoryId:32}});
                 this.xuanxiang=xuanxiang.data.rows
                 const {data:keyanDate}=await this.$http.get('/article/list',{params:{categoryId:54}});
                 this.keyanDate=keyanDate.data.rows
             },
             getTitle(){
                 document.title='贞丰县长田中学'
+            },
+            jianshe(){
+               this.$router.push('/parygroup/thought')
+               this.active=2
+            // this.$emit('activets',this.active)
             }
         }
     }

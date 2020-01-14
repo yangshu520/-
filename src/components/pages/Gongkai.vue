@@ -28,13 +28,9 @@
                 img:require('../../assets/images/gongkai.png'),
                 active:0,
                 scData:[
-                    {title:'思想建设',path:'/parygroup/thought'},
-                    {title:'组织建设',path:'/parygroup/organization'},
-                    {title:'作风建设',path:'/parygroup/way'},
-                    {title:'廉政建设',path:'/parygroup/integrity'},
-                    {title:'党建动态',path:'/parygroup/bulid'},
-                    {title:'工 会',path:'/parygroup/union'},
-                    {title:'团 委',path:'/parygroup/group'},
+                    {title:'校园动态',path:'/parygroup/thought'},
+                    {title:'校园公告',path:'/parygroup/organization'},
+                    {title:'师资力量',path:'/parygroup/way'},
                 ]
             }
         },

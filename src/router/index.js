@@ -41,6 +41,19 @@ const Group = () =>
     import ( /* webpackChunkName:"bulid_union_group" */ '../components/partygroup/Group.vue')
 const Jigou = () =>
     import ( /* webpackChunkName:"jigou_edu_gongkai_student_news" */ '../components/pages/Jigou.vue')
+const Rector = () =>
+    import ( /* webpackChunkName:"rector_research_learn_bureau_academic" */ '../components/jigou/Rector.vue')
+const Item = () =>
+    import ( /* webpackChunkName:"rector_research_learn_bureau_academic" */ '../components/jigou/Item.vue')
+const Learn = () =>
+    import ( /* webpackChunkName:"rector_research_learn_bureau_academic" */ '../components/jigou/Learn.vue')
+const Bureau = () =>
+    import ( /* webpackChunkName:"rector_research_learn_bureau_academic" */ '../components/jigou/Bureau.vue')
+const Research = () =>
+    import ( /* webpackChunkName:"rector_research_learn_bureau_academic" */ '../components/jigou/Research.vue')
+const Academic = () =>
+    import ( /* webpackChunkName:"rector_research_learn_bureau_academic" */ '../components/jigou/Academic.vue')
+
 const Edu = () =>
     import ( /* webpackChunkName:"jigou_edu_gongkai_student_news" */ '../components/pages/Edu.vue')
 const Gongkai = () =>
@@ -50,11 +63,19 @@ const Student = () =>
 const News = () =>
     import ( /* webpackChunkName:"jigou_edu_gongkai_student_news" */ '../components/pages/News.vue')
 const Article = () =>
-    import ( /* webpackChunkName:"article,though" */ '../components/article/Article.vue')
+    import ( /* webpackChunkName:"article,though,ways" */ '../components/article/Article.vue')
 const Though = () =>
-    import ( /* webpackChunkName:"article,though" */ '../components/article/Though.vue')
-
-
+    import ( /* webpackChunkName:"article,though,ways" */ '../components/article/Though.vue')
+const Ways = () =>
+    import ( /* webpackChunkName:"article,though,ways" */ '../components/article/Ways.vue')
+const Integr = () =>
+    import ( /* webpackChunkName:"integr,builds,unions,groups" */ '../components/article/Integr.vue')
+const Builds = () =>
+    import ( /* webpackChunkName:"integr,builds,unions,groups" */ '../components/article/Builds.vue')
+const Unions = () =>
+    import ( /* webpackChunkName:"integr,builds,unions,groups" */ '../components/article/Unions.vue')
+const Groups = () =>
+    import ( /* webpackChunkName:"integr,builds,unions,groups" */ '../components/article/Groups.vue')
 
 Vue.use(VueRouter)
 
@@ -93,11 +114,25 @@ const routes = [{
                 { path: '/parygroup/group', component: Group },
                 { path: '/parygroup/organization/:id', component: Article, props: true },
                 { path: '/parygroup/thoght/:id', component: Though, props: true },
+                { path: '/parygroup/ways/:id', component: Ways, props: true },
+                { path: '/parygroup/integrity/:id', component: Integr, props: true },
+                { path: '/parygroup/bulid/:id', component: Builds, props: true },
+                { path: '/parygroup/union/:id', component: Unions, props: true },
+                { path: '/parygroup/group/:id', component: Groups, props: true },
             ]
         },
         {
             path: '/jigou',
-            component: Jigou
+            component: Jigou,
+            redirect: '/jigou/rector',
+            children: [
+                { path: '/jigou/rector', component: Rector },
+                { path: '/jigou/learn', component: Learn },
+                { path: '/jigou/bureau', component: Bureau },
+                { path: '/jigou/academic', component: Academic },
+                { path: '/jigou/research', component: Research },
+                { path: '/jigou/item/:id', component: Item, props: true }
+            ]
         },
         {
             path: '/edu',

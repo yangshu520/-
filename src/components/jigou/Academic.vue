@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="thuoght" v-for="(item,index) in listData" :key="index" @click="$router.push('/parygroup/union/'+item.articleId)">
+        <div class="thuoght" v-for="(item,index) in listData" :key="index" @click="$router.push('/jigou/item/'+item.articleId)">
             <div class="left">
                 <span>{{item.articleTitle}}</span>
             </div>
@@ -9,7 +9,14 @@
             </div>
         </div>
         <div class="pagina" v-if="this.total">
-            <el-pagination @current-change='pagenumChange' :current-page="params.pageNum" :page-size="params.pageSize" layout="prev, pager, next, jumper" :total="total" background>
+            <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="pagenumChange"
+            :current-page="params.pageNum"
+            :page-sizes="[5, 10, 15, 20]"
+            :page-size="params.pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="total" background>
             </el-pagination>
         </div>
     </div>
@@ -25,7 +32,7 @@
                     // 当前的页数
                     pageNum:1,
                     // 后端需要的id
-                    categoryId:59
+                    categoryId:64
                 },
                 listData:[],
                 total:0
@@ -45,6 +52,11 @@
             //当页码发生变化时
             pagenumChange(newPage){
                 this.params.pageNum=newPage
+                this.getList()
+            },
+            //当条数发生变化时
+            handleSizeChange(newSize){
+                this.params.pageSize=newSize
                 this.getList()
             }
         }

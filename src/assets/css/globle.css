@@ -87,3 +87,7 @@ ol li {
 .el-input__inner {
     height: 23px;
 }
+
+.el-pagination.is-background .el-pager li {
+    border-radius: 8px;
+}

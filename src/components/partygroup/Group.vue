@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="thuoght" v-for="(item,index) in listData" :key="index">
+        <div class="thuoght" v-for="(item,index) in listData" :key="index" @click="$router.push('/parygroup/group/'+item.articleId)">
             <div class="left">
                 <span>{{item.articleTitle}}</span>
             </div>
@@ -8,7 +8,7 @@
                 <span>{{item.articleCreateTime.substr(0,10)}}</span>
             </div>
         </div>
-        <div class="pagina">
+        <div class="pagina" v-if="this.total">
             <el-pagination @current-change='pagenumChange' :current-page="params.pageNum" :page-size="params.pageSize" layout="prev, pager, next, jumper" :total="total" background>
             </el-pagination>
         </div>
@@ -25,7 +25,7 @@
                     // 当前的页数
                     pageNum:1,
                     // 后端需要的id
-                    categoryId:33
+                    categoryId:60
                 },
                 listData:[],
                 total:0
