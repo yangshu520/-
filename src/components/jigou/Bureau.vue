@@ -78,7 +78,10 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        cursor: pointer;
+        span:hover{
+            color:#9C0101;
+            cursor: pointer;
+        }
     }
     .right{
         float: right;

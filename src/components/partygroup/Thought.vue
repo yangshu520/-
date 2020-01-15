@@ -2,7 +2,9 @@
     <div>
         <div class="thuoght" v-for="(item,index) in listData" :key="index" @click="$router.push('/parygroup/thoght/'+item.articleId)">
             <div class="img">
-                <img src="https://www.heiyi666.cn//wx/imgfj%20%2864%29.jpg" alt="">
+                <div class="div">
+                    <img src="https://www.heiyi666.cn//wx/imgfj%20%2864%29.jpg" alt="">
+                </div>
             </div>
             <div class="left">
                 <span>{{item.articleTitle}}</span>
@@ -68,10 +70,19 @@
         height: 160px;
         padding-top: 31px;
         box-sizing: border-box;
-        img{
+        .div{
             width:141px;
             height:97px;
             border-radius:10px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                transition: all .5s;
+                height: 100%;
+            }
+            img:hover{
+            transform: scale(1.25,1.25)
+            }
         }
     }
     .left{

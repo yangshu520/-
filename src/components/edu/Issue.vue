@@ -1,6 +1,6 @@
-<template>
+ <template>
     <div>
-        <div class="thuoght" v-for="(item,index) in listData" :key="index" @click="$router.push('/jigou/item/'+item.articleId)">
+        <div class="thuoght" v-for="(item,index) in listData" :key="index" @click="$router.push('/edu/item/'+item.articleId)">
             <div class="left">
                 <span>{{item.articleTitle}}</span>
             </div>
@@ -32,7 +32,7 @@
                     // 当前的页数
                     pageNum:1,
                     // 后端需要的id
-                    categoryId:65
+                    categoryId:67
                 },
                 listData:[],
                 total:0

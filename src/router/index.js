@@ -53,9 +53,18 @@ const Research = () =>
     import ( /* webpackChunkName:"rector_research_learn_bureau_academic" */ '../components/jigou/Research.vue')
 const Academic = () =>
     import ( /* webpackChunkName:"rector_research_learn_bureau_academic" */ '../components/jigou/Academic.vue')
-
 const Edu = () =>
     import ( /* webpackChunkName:"jigou_edu_gongkai_student_news" */ '../components/pages/Edu.vue')
+const Issue = () =>
+    import ( /* webpackChunkName:"achievement_award_issue_trend" */ '../components/edu/Issue.vue')
+const Achievement = () =>
+    import ( /* webpackChunkName:"achievement_award_issue_trend" */ '../components/edu/Achievement.vue')
+const Award = () =>
+    import ( /* webpackChunkName:"achievement_award_issue_trend" */ '../components/edu/Award.vue')
+const Trend = () =>
+    import ( /* webpackChunkName:"achievement_award_issue_trend" */ '../components/edu/Trend.vue')
+const Items = () =>
+    import ( /* webpackChunkName:"achievement_award_issue_trend" */ '../components/edu/Items.vue')
 const Gongkai = () =>
     import ( /* webpackChunkName:"jigou_edu_gongkai_student_news" */ '../components/pages/Gongkai.vue')
 const Student = () =>
@@ -136,7 +145,15 @@ const routes = [{
         },
         {
             path: '/edu',
-            component: Edu
+            component: Edu,
+            redirect: '/edu/issue',
+            children: [
+                { path: '/edu/issue', component: Issue },
+                { path: '/edu/achievement', component: Achievement },
+                { path: '/edu/award', component: Award },
+                { path: '/edu/trend', component: Trend },
+                { path: '/edu/item/:id', component: Items, props: true },
+            ]
         },
         {
             path: '/gongkai',

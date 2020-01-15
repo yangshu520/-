@@ -108,11 +108,11 @@
                             <div class="jianshe">教育科研</div>
                             <div class="keyanbox">
                                 <div class="xuanxiang" v-for="(item,index) in keyanDate" :key="index">
-                                    <span class="shenglie">{{item.articleTitle}}</span>
+                                    <span class="shenglie" @click="$router.push('/edu/item/'+item.articleId)">{{item.articleTitle}}</span>
                                     <span style="float:right;color:#999">{{item.articleCreateTime.substr(0,10)}}</span>
                                 </div>
+                                <div class="moreuexiang" v-if="keyanDate.length!==0"><span @click="$router.push('/edu/issue')">查看更多>></span></div>
                             </div>
-                            <div class="moreuexiang" v-if="keyanDate.length!==0"><span>查看更多>></span></div>
                         </div>
                     </div>
                 </div>
@@ -181,7 +181,7 @@
                 this.szDate=szDate.data.rows
                 const {data:xuanxiang}=await this.$http.get('/article/list',{params:{categoryId:32}});
                 this.xuanxiang=xuanxiang.data.rows
-                const {data:keyanDate}=await this.$http.get('/article/list',{params:{categoryId:54}});
+                const {data:keyanDate}=await this.$http.get('/article/list',{params:{categoryId:67}});
                 this.keyanDate=keyanDate.data.rows
             },
             getTitle(){
@@ -391,6 +391,13 @@
     display: inline-block;
     border-radius: 10px;
     overflow: hidden;
+    img{
+        transition: all .5s ease-in-out;
+    }
+    img:hover{
+        cursor: pointer;
+        transform: scale(1.25,1.25);
+    }
 }
 .jiaoshi-img span{
     display: inline-block;
@@ -486,6 +493,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.shenglie:hover{
+    color: #9C0100;
+    cursor: pointer;
+}
 .moreuexiang{
     width: 446px;
     line-height: 44px;
@@ -527,7 +538,8 @@
     overflow: hidden;
 }
 .keyanbox{
-    max-height: 123px;
+    height: 164px;
+    background-color: #fff;
     overflow: hidden;
 }
 </style>
