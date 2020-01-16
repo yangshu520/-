@@ -34,6 +34,7 @@
     data() {
       return {
         active:0,
+        footer:0,
         navDate:[
           {name:'首 页',path:'/home'},
           {name:'学校概况',path:'/school'},
@@ -56,7 +57,7 @@
     methods:{
       getActive(item,i){
         this.$router.push(item)
-        this.active=i
+        this.active=i;
       },
     },
   }
@@ -102,13 +103,14 @@ ul li{
   font-size: 14px;
   font-weight: 600;
   color: #606060;
-  font-family: Source Han Serif SC;
+  font-family: 'Source Han Serif SC';
   background-color: #fff;
-  height: 40px;
-  line-height: 40px;
+  height: 46px;
+  line-height: 46px;
   text-align: center;
   cursor: pointer;
   margin: 0 56px;
+  box-sizing: border-box;
 }
 .current{
     border-top: solid 2.25px #5C80B9;

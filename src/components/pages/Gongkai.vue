@@ -12,6 +12,35 @@
                 </el-aside>
                 <el-main>
                     <div class="main">
+                        <div class="header-nav" separator-class="el-icon-arrow-right">
+                            <span class="left" v-if="active==0">校园动态</span>
+                            <span class="left" v-if="active==1">校园公告</span>
+                            <span class="left" v-if="active==2">师资力量</span>
+                            <span class="left" v-if="active==3">心理咨询</span>
+                            <div class="right">
+                                <span>当前位置：</span>
+                                <el-breadcrumb separator-class="el-icon-arrow-right" v-if="active==0">
+                                    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/gongkai/moving' }">校务公开</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/gongkai/moving' }">校园动态</el-breadcrumb-item>
+                                </el-breadcrumb>
+                                <el-breadcrumb separator-class="el-icon-arrow-right" v-if="active==1">
+                                    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/gongkai/bulletin' }">校务公开</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/gongkai/bulletin' }">校园公告</el-breadcrumb-item>
+                                </el-breadcrumb>
+                                <el-breadcrumb separator-class="el-icon-arrow-right" v-if="active==2">
+                                    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/gongkai/advisory' }">校务公开</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/gongkai/advisory' }">师资力量</el-breadcrumb-item>
+                                </el-breadcrumb>
+                                <el-breadcrumb separator-class="el-icon-arrow-right" v-if="active==3">
+                                    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/gongkai/advisory' }">校务公开</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/gongkai/advisory' }">心理咨询</el-breadcrumb-item>
+                                </el-breadcrumb>
+                            </div>
+                        </div>
                         <router-view></router-view>
                     </div>
                 </el-main>
@@ -28,9 +57,10 @@
                 img:require('../../assets/images/gongkai.png'),
                 active:0,
                 scData:[
-                    {title:'校园动态',path:'/parygroup/thought'},
-                    {title:'校园公告',path:'/parygroup/organization'},
-                    {title:'师资力量',path:'/parygroup/way'},
+                    {title:'校园动态',path:'/gongkai/moving'},
+                    {title:'校园公告',path:'/gongkai/bulletin'},
+                    {title:'师资力量',path:'/gongkai/faculty'},
+					// {title:'心里咨询',path:'/gongkai/advisory'},
                 ]
             }
         },
@@ -89,4 +119,29 @@
     background-size: 100% 100%;
     color: #fff;
 }
+.header-nav{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #0162B3;
+        font-family: '微软雅黑';
+        .left{
+            font-size: 22px;
+            color: #333;
+            float: left;
+        }
+        .right{
+            float:right;
+            line-height: 50px;
+            font-size: 14px;
+            color: #222;
+            span{
+                float: left;
+            }
+            .el-breadcrumb{
+                float:right;
+                line-height: 50px;
+            }
+        }
+    }
 </style>

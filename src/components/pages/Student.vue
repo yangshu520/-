@@ -12,6 +12,35 @@
                 </el-aside>
                 <el-main>
                     <div class="main">
+                        <div class="header-nav" separator-class="el-icon-arrow-right">
+                            <span class="left" v-if="active==0">学生社团</span>
+                            <span class="left" v-if="active==1">学生佳作</span>
+                            <span class="left" v-if="active==2">校运会风</span>
+                            <span class="left" v-if="active==3">班级主页</span>
+                            <div class="right">
+                                <span>当前位置：</span>
+                                <el-breadcrumb separator-class="el-icon-arrow-right" v-if="active==0">
+                                    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/student/league' }">学生天地</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/student/league' }">学生社团</el-breadcrumb-item>
+                                </el-breadcrumb>
+                                <el-breadcrumb separator-class="el-icon-arrow-right" v-if="active==1">
+                                    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/student/writing' }">学生天地</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/student/writing' }">学生佳作</el-breadcrumb-item>
+                                </el-breadcrumb>
+                                <el-breadcrumb separator-class="el-icon-arrow-right" v-if="active==2">
+                                    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '//student/style' }">学生天地</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '//student/style' }">校园会风采</el-breadcrumb-item>
+                                </el-breadcrumb>
+                                <el-breadcrumb separator-class="el-icon-arrow-right" v-if="active==3">
+                                    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/student/kind' }">学生天地</el-breadcrumb-item>
+                                    <el-breadcrumb-item :to="{ path: '/student/kind' }">班级主页</el-breadcrumb-item>
+                                </el-breadcrumb>
+                            </div>
+                        </div>
                         <router-view></router-view>
                     </div>
                 </el-main>
@@ -28,12 +57,10 @@
                 img:require('../../assets/images/student.png'),
                 active:0,
                 scData:[
-                    {title:'团委学生会',path:''},
-                    {title:'学生社团',path:''},
-                    {title:'学生佳作',path:''},
-                    {title:'校运会风采',path:''},
-                    {title:'班级主页',path:''},
-                    {title:'军训专栏',path:''},
+                    {title:'学生社团',path:'/student/league'},
+                    {title:'学生佳作',path:'/student/writing'},
+                    {title:'校运会风采',path:'/student/style'},
+                    {title:'班级主页',path:'/student/kind'},
                 ]
             }
         },
@@ -92,4 +119,29 @@
     background-size: 100% 100%;
     color: #fff;
 }
+.header-nav{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #0162B3;
+        font-family: '微软雅黑';
+        .left{
+            font-size: 22px;
+            color: #333;
+            float: left;
+        }
+        .right{
+            float:right;
+            line-height: 50px;
+            font-size: 14px;
+            color: #222;
+            span{
+                float: left;
+            }
+            .el-breadcrumb{
+                float:right;
+                line-height: 50px;
+            }
+        }
+    }
 </style>

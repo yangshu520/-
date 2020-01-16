@@ -17,12 +17,12 @@
                         <el-tab-pane label="校园动态">
                             <div>
                                 <div class="maxheight">
-                                    <div class="left" v-for="(item,index) in dtDate" :key="index" @click="$router.push('/'+item.articleId)">
-                                        <span class="left-l">{{item.articleTitle}}</span><span class="left-r">{{item.articleCreateTime.substr(0,10)}}</span>
+                                    <div class="left" v-for="(item,index) in dtDate" :key="index" >
+                                        <span class="left-l" @click="$router.push('/gongkai/item/'+item.articleId)">{{item.articleTitle}}</span><span class="left-r">{{item.articleCreateTime.substr(0,10)}}</span>
                                     </div>
                                 </div>
                                 <div class="more">
-                                    <span @click="$router.push('/school')" v-if="dtDate.length!==0">查看更多>></span>
+                                    <span @click="$router.push('/gongkai/moving')" v-if="dtDate.length!==0">查看更多>></span>
                                 </div>
                             </div>
                         </el-tab-pane>
@@ -30,11 +30,11 @@
                             <div>
                                <div class="maxheight">
                                     <div class="left" v-for="(item,index) in xyDate" :key="index">
-                                        <span class="left-l">{{item.articleTitle}}</span><span class="left-r">{{item.articleCreateTime.substr(0,10)}}</span>
+                                        <span class="left-l" @click="$router.push('/gongkai/item/'+item.articleId)">{{item.articleTitle}}</span><span class="left-r">{{item.articleCreateTime.substr(0,10)}}</span>
                                     </div>
                                 </div>
                                 <div class="more">
-                                    <span @click="$router.push('/school')" v-if="xyDate.length!==0">查看更多>></span>
+                                    <span @click="$router.push('/gongkai/bulletin')" v-if="xyDate.length!==0">查看更多>></span>
                                 </div>
                             </div>
                         </el-tab-pane>
@@ -86,11 +86,11 @@
                         <div class="xiaolie">
                             <div class="zhanshibox">
                                 <div class="zhanshi" v-for="(item,index) in szDate" :key="index">
-                                    <span class="sxliliang">{{item.articleTitle}}</span>
+                                    <span class="sxliliang" @click="$router.push('/gongkai/item/'+item.articleId)">{{item.articleTitle}}</span>
                                     <span class="right">{{item.articleCreateTime.substr(0,10)}}</span>
                                 </div>
                             </div>
-                            <div class="morezhanshi" v-if="szDate.length!==0"><span style="float:right">查看更多>></span></div>
+                            <div class="morezhanshi" v-if="szDate.length!==0"><span style="float:right" @click="$router.push('/gongkai/faculty')">查看更多>></span></div>
                         </div>
                     </div>
                     <div class="footer-right">

@@ -105,7 +105,6 @@
 .box {
     width: 930px;
     margin: 0 auto;
-    text-align: center;
 }
         
 .text {

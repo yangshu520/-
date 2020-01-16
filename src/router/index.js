@@ -67,8 +67,28 @@ const Items = () =>
     import ( /* webpackChunkName:"achievement_award_issue_trend" */ '../components/edu/Items.vue')
 const Gongkai = () =>
     import ( /* webpackChunkName:"jigou_edu_gongkai_student_news" */ '../components/pages/Gongkai.vue')
+const Moving = () =>
+    import ( /* webpackChunkName:"moving_faculty_bulletin_advisory" */ '../components/gongkai/Moving')
+const Faculty = () =>
+    import ( /* webpackChunkName:"moving_faculty_bulletin_advisory" */ '../components/gongkai/Faculty')
+const Bulletin = () =>
+    import ( /* webpackChunkName:"moving_faculty_bulletin_advisory" */ '../components/gongkai/Bulletin')
+const Advisory = () =>
+    import ( /* webpackChunkName:"moving_faculty_bulletin_advisory" */ '../components/gongkai/Advisory')
+const Gitem = () =>
+    import ( /* webpackChunkName:"gitem" */ '../components/gongkai/Gitem')
 const Student = () =>
     import ( /* webpackChunkName:"jigou_edu_gongkai_student_news" */ '../components/pages/Student.vue')
+const League = () =>
+    import ( /*webpackChunkName:"league_writ_style_kind_sitem"*/ '../components/student/League.vue')
+const Writing = () =>
+    import ( /*webpackChunkName:"league_writing_style_kind_sitem"*/ '../components/student/Writing.vue')
+const Style = () =>
+    import ( /*webpackChunkName:"league_writing_style_kind_sitem"*/ '../components/student/Style.vue')
+const Kind = () =>
+    import ( /*webpackChunkName:"league_writing_style_kind_sitem"*/ '../components/student/Kind.vue')
+const Sitem = () =>
+    import ( /*webpackChunkName:"league_writing_style_kind_sitem"*/ '../components/student/Sitem.vue')
 const News = () =>
     import ( /* webpackChunkName:"jigou_edu_gongkai_student_news" */ '../components/pages/News.vue')
 const Article = () =>
@@ -140,7 +160,7 @@ const routes = [{
                 { path: '/jigou/bureau', component: Bureau },
                 { path: '/jigou/academic', component: Academic },
                 { path: '/jigou/research', component: Research },
-                { path: '/jigou/item/:id', component: Item, props: true }
+                { path: '/jigou/item/:id', component: Item, props: true },
             ]
         },
         {
@@ -157,15 +177,32 @@ const routes = [{
         },
         {
             path: '/gongkai',
-            component: Gongkai
+            component: Gongkai,
+            redirect: '/gongkai/moving',
+            children: [
+                { path: '/gongkai/moving', component: Moving },
+                { path: '/gongkai/bulletin', component: Bulletin },
+                { path: '/gongkai/faculty', component: Faculty },
+                { path: '/gongkai/advisory', component: Advisory },
+                { path: '/gongkai/item/:id', component: Gitem, props: true }
+            ]
         },
         {
             path: '/student',
-            component: Student
+            component: Student,
+            redirect: '/student/league',
+            children: [
+                { path: '/student/league', component: League },
+                { path: '/student/writing', component: Writing },
+                { path: '/student/style', component: Style },
+                { path: '/student/kind', component: Kind },
+                { path: '/student/item/:id', component: Sitem, props: true },
+            ]
         },
         {
             path: '/news',
-            component: News
+            component: News,
+            redirect: '/parygroup/thought'
         },
     ]
 }, ]
